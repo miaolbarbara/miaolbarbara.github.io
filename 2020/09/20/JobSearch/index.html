@@ -12,7 +12,7 @@
 
 
 
-<title>test_my—_site | LEI&#39;s page</title>
+<title>Job Hunting Road Map in 2020 | LEI&#39;s page</title>
 
 
 
@@ -103,11 +103,73 @@
             <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">test_my—_site</h1>
+            <h1 class="post-title">Job Hunting Road Map in 2020</h1>
             
                 <div class="post-meta">
                     
@@ -132,7 +194,10 @@
         </header>
 
         <div class="post-content">
-            
+            <h1 id="Preparation-to-be-a-NEWBIE-at-work"><a href="#Preparation-to-be-a-NEWBIE-at-work" class="headerlink" title="Preparation to be a NEWBIE at work"></a>Preparation to be a NEWBIE at work</h1><p>At the beginning of 2020, we encountered a global pandemic that has brought countries to a standstill. From March to Spetember, I was the lucky one who kept my internship in the automotive industry. I proved my autonomy in the beginning of télétravail. I improved three different algorithms for real time plotting and real time animation. What is more, as a foreigner, I brought myself to be integrated into an international team in a french company. However, under such kind of circumstances, our client has cancelled most of our projects (you know the car industry in 2020 sucks…), even my collegue who just passed the “période d’essai” could not stay. Hopefully, I finished my internship with my team and got my diplome in October. And now, it’s the time to bite the bullet and take this challenge to find a new job. Now, I’m the <strong>NEWBIE</strong> at work;)</p>
+<hr>
+<h2 id="My-Job-Search-Road-Map"><a href="#My-Job-Search-Road-Map" class="headerlink" title="My Job Search Road Map"></a>My Job Search Road Map</h2><p>I give myself 3-6 months to find a job in France or even in the whole world.</p>
+
         </div>
 
         
@@ -146,7 +211,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2020/09/20/test-my%E2%80%94-site/">http://example.com/2020/09/20/test-my%E2%80%94-site/</a></span>
+                        <span><a href="http://example.com/2020/09/20/JobSearch/">http://example.com/2020/09/20/JobSearch/</a></span>
                     </p>
                 
                 
