@@ -103,6 +103,68 @@
             <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
@@ -132,7 +194,74 @@
         </header>
 
         <div class="post-content">
-            
+            <head> 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script> 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js"></script> 
+</head> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+
+
+
+<p><font color=gray>Several days ago I was recommended by a friend with a position based in Luxembourg. The job description requires that candidates have basic knowledge in Python and Linux. I’ve already used python for embedded software development for a while. But this position’s mission is more like Oracle DataBase. Ok so that, before the interview of next week, I set up a small goal, which is **get started with Oracle DB in 5 days. ** </font></p>
+<p><font color=gray>Actually this morning, I got a good news from Sécurité Sociale that my PCR test result is positive, so I have a lot of time to stay in my bedroom and learn some stuff by myself ! A good timing for me to improve myself!</font></p>
+<hr>
+<h2 id="tutorials"><a href="#tutorials" class="headerlink" title="tutorials"></a>tutorials</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/introduction-to-oracle-database.html#GUID-A42A6EF0-20F8-4F4B-AFF7-09C100AE581E">Database Concepts are given in the release 19 of Oracle Library.</a><br><i class="fas fa-clock"></i> 30 min</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.oracle.com/en/database/oracle/oracle-database/19/admqs/preface.html#GUID-6F9B427D-1298-4E42-A611-E7EA75FE018B">2 Day DBA</a><br><i class="fas fa-clock"></i> 2 days</p>
+</li>
+<li><p>Install Oracle Database 12c, practice with SQL developer, syntaxe…<i class="fas fa-clock"></i> 3-5 days</p>
+</li>
+</ul>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><a target="_blank" rel="noopener" href="https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/introduction-to-oracle-database.html#GUID-A42A6EF0-20F8-4F4B-AFF7-09C100AE581E">Database Concepts are given in the release 19 of Oracle Library.</a></p>
+<blockquote>
+<p>An <strong>information system</strong> is a formal system for storing and processing information. An information system could be a set of cardboard boxes containing manila folders along with rules for how to store and retrieve the folders. However, most companies today use a database to automate their information systems. A database is an organized collection of information treated as a unit. The purpose of a database is to collect, store, and retrieve related information for use by database applications.</p>
+</blockquote>
+<p><strong>Database Management System (DBMS)</strong></p>
+<p>A database management system (DBMS) is software that controls the storage, organization, and retrieval of data.Typically, a DBMS has the following elements:</p>
+<ul>
+<li>Kernel code: This code manages memory and storage for the DBMS.</li>
+<li>Repository of metadata: This repository is usually called a data dictionary.</li>
+<li>Query language: This language enables applications to access the data.</li>
+</ul>
+<p>A database application is a software program that interacts with a database to access and manipulate data.</p>
+<p>The first generation of database management systems included the following types:</p>
+<ul>
+<li>Hierarchical</li>
+</ul>
+<p>A hierarchical database organizes data in a tree structure. Each parent record has one or more child records, similar to the structure of a file system.</p>
+<ul>
+<li>Network</li>
+</ul>
+<p>A network database is similar to a hierarchical database, except records have a many-to-many rather than a one-to-many relationship.</p>
+<p>Database and Instance<br>An Oracle database server consists of a database and at least one database instance, commonly referred to as simply an instance.</p>
+<p>Because an instance and a database are so closely connected, the term Oracle database is sometimes used to refer to both instance and database. In the strictest sense the terms have the following meanings:</p>
+<p><strong>Database</strong></p>
+<p>A database is a set of files, located on disk, that store data. These files can exist independently of a database instance.</p>
+<p><strong>Database instance</strong></p>
+<p>An instance is a set of memory structures that manage database files. The instance consists of a shared memory area, called the system global area (SGA), and a set of background processes. An instance can exist independently of database files.</p>
+<p>The following figure shows a database and its instance. For each user connection to the instance, a client process runs the application. Each client process is associated with its own server process. The server process has its own private session memory, known as the program global area (PGA).</p>
+<p><img src="https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/img/cncpt233.gif" alt="Oracle Instance and Database"></p>
+<p>More information about <strong>Oracle storage structure</strong> and <strong>instance structure</strong> can be referred in this <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/introduction-to-oracle-database.html#GUID-A42A6EF0-20F8-4F4B-AFF7-09C100AE581E">doc</a> as well.</p>
+<h2 id="Oracle-syntax-and-functions"><a href="#Oracle-syntax-and-functions" class="headerlink" title="Oracle syntax and functions"></a>Oracle syntax and functions</h2><p>I will try to create a new post where I can gather these most useful functions so that I look it up anytime.</p>
+<h2 id="Managing-Your-Database-A-Roadmap"><a href="#Managing-Your-Database-A-Roadmap" class="headerlink" title="Managing Your Database: A Roadmap"></a>Managing Your Database: A Roadmap</h2><p>More details can be found in Oracle doc, an overview of the tasks involved in managing an Oracle database instance is as followings:</p>
+<p>Start the database instance.</p>
+<p>After the installation, your instance is started and your database is open. In the future, there will be times, perhaps for doing database maintenance or because of a power or media failure, that you shut down your database instance and later restart it.</p>
+<p>Optionally, configure the network environment to enable clients to connect to your database.</p>
+<p>Review your database storage structures: tablespaces and data files, online redo log files, and control files. Create or modify storage structures as needed.</p>
+<p>Review memory allocation and adjust as needed.</p>
+<p>Review, unlock, and reset passwords for predefined database users as needed. Create new users, and assign privileges and roles to them.</p>
+<p>Create the necessary schema objects, including tables, views, and indexes. Populate the tables with data.</p>
+<p>Create or review the backup strategy for the database and back up the database.</p>
+<p>Enable archiving of online redo log files, if not already done.</p>
+<p>Monitor database performance, diagnose performance problems, and tune the database as necessary.</p>
+<p>Investigate, gather diagnostic data for, and report to Oracle Support Services any critical database errors.</p>
+<p>Keep Oracle Database software up-to-date with the latest releases.</p>
+<h2 id="Oracle-Advanced-Analyse"><a href="#Oracle-Advanced-Analyse" class="headerlink" title="Oracle Advanced Analyse"></a>Oracle Advanced Analyse</h2><p>I find the very interesting slides <a target="_blank" rel="noopener" href="https://www.slideshare.net/CharlieDataMine/oracles-advanced-analytics-machine-learning-122c-new-features-road-map-bigger-better-faster-more">here</a>, it makes a brief introduction about Machine Learning and Oracle DB 12c. Mark it!</p>
+<p><img src="https://image.slidesharecdn.com/oraclesadvancedanalytics12-161201202107/95/oracles-advanced-analytics-machine-learning-122c-new-features-road-map-bigger-better-faster-more-7-638.jpg?cb=1480623860" alt="In-databased machine learning Algo"></p>
+<p><img src="https://image.slidesharecdn.com/oraclesadvancedanalytics12-161201202107/95/oracles-advanced-analytics-machine-learning-122c-new-features-road-map-bigger-better-faster-more-10-638.jpg?cb=1480623860" alt="Oracle Data mining/Machine Learning/Predictive Analytics"></p>
+
         </div>
 
         
