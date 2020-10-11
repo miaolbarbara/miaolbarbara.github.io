@@ -203,17 +203,8 @@
 <p>So I turn to check if I add oracle_home into the environment path.</p>
 <h2 id="check-if-the-ORQCLE-HOME-is-set-as-path-value"><a href="#check-if-the-ORQCLE-HOME-is-set-as-path-value" class="headerlink" title="check if the ORQCLE_HOME is set as path value"></a>check if the ORQCLE_HOME is set as path value</h2><p>On Windows: On command prompt, type D:&gt;echo %ORACLE_HOME%. If this gives the directory path, that means ORACLE_HOME is set. If this just gives back as in the code snippet below., that means I need to set the value.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lmiao&gt;echo %ORACLE_HOME%</span><br><span class="line">%ORACLE_HOME%</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<blockquote>
 <p>On Unix/Linux: type</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>env | grep ORACLE_HOME</p>
-</blockquote>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env | grep ORACLE_HOME</span><br></pre></td></tr></table></figure>
 <p>Obviously, my output indicates me to add the Oracle_home in the path.</p>
 <h2 id="set-ORACLE-HOME"><a href="#set-ORACLE-HOME" class="headerlink" title="set ORACLE_HOME"></a>set ORACLE_HOME</h2><p>On windows, set it in cmd:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lmiao&gt;set ORACLE_HOME&#x3D;D:\app\lmiao\product\12.2.0\dbhome_1</span><br><span class="line"></span><br><span class="line">C:\Users\lmiao&gt;echo %ORACLE_HOME%</span><br><span class="line">D:\app\lmiao\product\12.2.0\dbhome_1</span><br></pre></td></tr></table></figure>
